@@ -10,7 +10,7 @@ RUN apt-get update && \
     # Install ndn-cxx
     git clone https://github.com/named-data/ndn-cxx && \
     cd ndn-cxx && \
-    ./waf configure --with-examples && \
+    ./waf configure && \
     ./waf && \
     ./waf install && \
     ldconfig && \
