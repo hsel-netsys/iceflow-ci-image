@@ -1,7 +1,7 @@
-FROM ubuntu:latest
+FROM debian:bookworm-slim
 
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install git cmake wget software-properties-common build-essential pkg-config python3-minimal libssl-dev libsqlite3-dev libopencv-dev clang-format libboost-all-dev cppcheck doxygen libpcap-dev libsystemd-dev psmisc sudo && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install git cmake wget software-properties-common build-essential pkg-config python3-minimal libssl-dev libsqlite3-dev libopencv-dev clang-format libboost-all-dev cppcheck doxygen libpcap-dev libsystemd-dev psmisc sudo python3-launchpadlib && \
     ln -s /usr/include/opencv4 /usr/local/include/opencv4 && \
     # Install nlohmann-json
     add-apt-repository ppa:team-xbmc/ppa &&  \
